@@ -8,7 +8,7 @@
 1. **Booking** - stores booking ID, user who has booked, amount paid
 2. **SeatBooked** - stores seat booked, booking ID
 
-###APIs:
+### APIs:
 1. Book Ticket
 
 Accepts show id and seat numbers and returns booking ID
