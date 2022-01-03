@@ -5,9 +5,37 @@ from datetime import datetime
 from django.http import HttpResponse
 from rest_framework.views import APIView
 
-from .models import Seat, Show
+from .models import City, Seat, Show
 
 logger = logging.getLogger(__name__)
+
+
+class GetAllCities(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request):
+        """
+        Returns movies playing in the city
+        """
+        response = {"status": False, "cities": [], "error": ""}
+
+        try:
+
+            city_objs = City.objects.all()
+            logger.info("city_objs: %s" % city_objs)
+            cities = []
+
+            for city in city_objs:
+                cities.append(city.name)
+
+            response.update({"status": True, "cities": cities})
+
+        except Exception as e:
+            logger.critical("Exception in GetAllCities: %s" % str(e))
+            response.update({"error": str(e)})
+
+        return HttpResponse(json.dumps(response), content_type="application/json")
 
 
 class GetMoviesByCity(APIView):

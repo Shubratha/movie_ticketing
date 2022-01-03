@@ -9,11 +9,29 @@ Inventory has the basic details needed for the website. This app stores informat
 4. Show
 5. Seat
 
+The details can be added by admin using Admin Panel ([/admin](http://127.0.0.1:8000/admin/))
+
 ### API
 
 These are public APIs i.e., no authentication required
 
-**1. Fetch movies playing in a city**
+**1. Get all cities available**
+```
+curl --location --request GET 'http://127.0.0.1:8000/cinemas/getCities/'
+```
+Sample Response:
+```json
+{
+    "status": true,
+    "error": "",
+    "cities": [
+        "Bangalore",
+        "Hyderabad"
+    ]
+}
+```
+
+**2. Fetch movies playing in a city**
 ```
 curl --location --request GET 'http://127.0.0.1:8000/cinemas/getMovies/<city_name>/'
 ```
@@ -40,7 +58,7 @@ Sample Response:
 ```
 
 
-**2. Fetch all cinemas playing a movie**
+**3. Fetch all cinemas playing a movie**
 ```buildoutcfg
 curl --location --request GET 'http://127.0.0.1:8000/cinemas/getCinemas/<movie_name>/'
 ```
@@ -66,7 +84,7 @@ Sample Response:
 }
 ```
 
-**3. Check seats available for a movie show**
+**4. Check seats available for a movie show**
 ```commandline
 curl --location --request GET 'http://127.0.0.1:8000/cinemas/getSeats/<show_id>/'
 ```

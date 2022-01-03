@@ -29,8 +29,8 @@ APIs for movie ticketing website
 
 #### Apps capable of being separate microservice:
 - Inventory [^1](https://github.com/Shubratha/movie_ticketing/tree/main/movie_booking_site/inventory#readme)
-- Booking [^2](https://github.com/Shubratha/movie_ticketing/tree/main/movie_booking_site/user#readme)
-- User/Auth [^3](https://github.com/Shubratha/movie_ticketing/tree/main/movie_booking_site/booking#readme)
+- Booking [^2](https://github.com/Shubratha/movie_ticketing/tree/main/movie_booking_site/booking#readme)
+- User/Auth [^3](https://github.com/Shubratha/movie_ticketing/tree/main/movie_booking_site/user#readme)
 
 
 [Hosted Website- Live Try](https://shubratha.pythonanywhere.com/cinemas/getMovies/Bangalore/)
